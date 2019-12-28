@@ -1,0 +1,6 @@
+D:\filesFromCDisk\important\WcfServiceItem\bin\WcfServiceItem.dll.config
+D:\filesFromCDisk\important\WcfServiceItem\bin\WcfServiceItem.dll
+D:\filesFromCDisk\important\WcfServiceItem\bin\WcfServiceItem.pdb
+D:\filesFromCDisk\important\WcfServiceItem\obj\Debug\WcfServiceItem.csprojAssemblyReference.cache
+D:\filesFromCDisk\important\WcfServiceItem\obj\Debug\WcfServiceItem.dll
+D:\filesFromCDisk\important\WcfServiceItem\obj\Debug\WcfServiceItem.pdb

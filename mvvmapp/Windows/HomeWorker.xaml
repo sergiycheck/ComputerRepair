@@ -1,0 +1,80 @@
+﻿<Window x:Class="mvvmapp.HomeWorker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mvvmapp"
+        mc:Ignorable="d"
+        Title="HomeWorker" >
+
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" Text="Type to search order" Margin="15 10" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True"  Language="en-US" ></TextBox>
+            <Button Content="Search"  Grid.Column="1" Margin="15 10"/>
+            <Button Grid.Column="2" Content="Sign out" Margin="15 10" x:Name="SignOutBtn" Click="SignOutBtn_Click" ></Button>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0"
+                     ItemsSource="{Binding Computers}" Padding="20" SelectedItem="{Binding Path=SelectedComputer}"
+                     Height="400">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                                    <Image Width="100" Height="75" Source="{Binding Path=ImagePath}" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="{Binding Path=Id}"/>
+                                    <TextBlock Text="{Binding Path=Title}"/>
+                                    <TextBlock Text="{Binding Path=Company}"/>
+                                    <TextBlock Text="{Binding Path=Price}"/>
+                                    <TextBlock Text="{Binding Path=OrderId}"/>
+                                </StackPanel>
+                            </Grid>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Column="2">
+                <Button  Content="Components" Margin="30,10" x:Name="ComponentsBtn" Click="ComponentsBtn_Click"/>
+            </StackPanel>
+
+
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Margin="0 20" DataContext="{Binding SelectedComputer, Mode=TwoWay }" >
+                
+                <TextBox x:Name="IdTxt" Text="{Binding Path=Id}" IsEnabled="False"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Button  Margin="20" Content="Repair" x:Name="DeletetBtn" Command="{Binding DeleteComputerCommand}" CommandParameter="{Binding SelectedComputer}"></Button>
+            </StackPanel>
+            
+        </Grid>
+    </StackPanel>
+
+</Window>

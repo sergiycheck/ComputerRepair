@@ -1,0 +1,12 @@
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\mvvmApp.Bll.dll
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\mvvmApp.Bll.pdb
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\mvvmApp.Dal.Abstract.dll
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\System.ValueTuple.dll
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\EntityFramework.dll
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\mvvmApp.Dal.Abstract.pdb
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\mvvmApp.Dal.Abstract.dll.config
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\System.ValueTuple.xml
+D:\filesFromCDisk\important\mvvmApp.Bll\bin\Release\EntityFramework.xml
+D:\filesFromCDisk\important\mvvmApp.Bll\obj\Release\mvvmApp.Bll.csproj.CopyComplete
+D:\filesFromCDisk\important\mvvmApp.Bll\obj\Release\mvvmApp.Bll.dll
+D:\filesFromCDisk\important\mvvmApp.Bll\obj\Release\mvvmApp.Bll.pdb

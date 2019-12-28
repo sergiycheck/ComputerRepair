@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mvvmApp.Dal.Abstract.Client.ClientTcpAction" Collapsed="true">
+    <Position X="33" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Client\ClientTcpAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.ApplicationContext" Collapsed="true">
+    <Position X="29.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAIAAAQCAAAAAAAgAAJAAIAABAAABAAAIAAAAA=</HashCode>
+      <FileName>Entities\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.ItemDbInitializer" Collapsed="true">
+    <Position X="33" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Processor" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Entities\Components\Processor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.ItemAndOrderId" Collapsed="true">
+    <Position X="31.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ItemAndOrderId.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.OrderItem" Collapsed="true">
+    <Position X="27.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\OrderItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.User" Collapsed="true">
+    <Position X="33" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAQAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.Cooler" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\Cooler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.Element" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.KeyBoard" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\KeyBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.MemoryDisc" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\MemoryDisc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.MemoryModule" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\MemoryModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.Monitor" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Entities\Components\Monitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.MotherBoard" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\MotherBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.PowerBlock" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\PowerBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Components.VideoCard" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAiAAAAAAAAA=</HashCode>
+      <FileName>Entities\Components\VideoCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Entities.Computer.Computer" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAIAAAQAAAAAACAAAAEIAAAEAAAAAAAAAAEAAI=</HashCode>
+      <FileName>Entities\Computer\Computer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Item" Collapsed="true">
+    <Position X="29.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAQAAAEAEAAAAAIAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Entities\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Order" Collapsed="true">
+    <Position X="26" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAQAAQAAAAAAAAAADAAAAAAAAAAQ=</HashCode>
+      <FileName>Entities\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.InItemOneOrder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201911171143135_InItemOneOrder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.nWindowsMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201911271701492_nWindowsMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.NotworkingMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201911271715525_NotworkingMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.NopeToWorkMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201911271902282_NopeToWorkMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.addUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201911302334216_addUser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.addedVirtualProperty" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201912042333515_addedVirtualProperty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.ChangesForNotUpdating" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201912181141358_ChangesForNotUpdating.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Migrations.Configuration" Collapsed="true">
+    <Position X="26" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Migrations\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.ComputerRepository&lt;T&gt;" Collapsed="true">
+    <Position X="2.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ComputerRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.GenericRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAAAAAAAAAAAEIAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Repositories\GenericRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.ItemRepository&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ItemRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.ItemRepositoryADO" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAIAQIAAAAEgAAAECACAAAkkgAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ItemRepositoryADO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.ItemRepositoryEF" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAQAEAAAAAAAAAAAEEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ItemRepositoryEF.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.OrderRepository&lt;T&gt;" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.OrderRepositoryADO" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEQAAIAAAAAQAEgAAAACAEACAEEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\OrderRepositoryADO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.OrderRepositoryEF" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABIAAAAAQAEAAAAAAAAAAAEEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\OrderRepositoryEF.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mvvmApp.Dal.Abstract.Repositories.UserRepository&lt;T&gt;" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="mvvmApp.Dal.Abstract.Interfaces.IGenericRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Interfaces\IGenericRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mvvmApp.Dal.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAEAAAAAAAAAAAEEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

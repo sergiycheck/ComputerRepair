@@ -1,0 +1,16 @@
+D:\filesFromCDisk\important\mvvmapp\obj\Release\mvvmapp.csprojAssemblyReference.cache
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\AddComputerWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\ComponentsWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\ForgotPasswordWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\HomeWorker.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\LoginWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\MainWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\HomeWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\OrderWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\RegisterWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\UpdateComputerWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\Windows\ViewWindow.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\App.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\filesFromCDisk\important\mvvmapp\obj\Release\mvvmapp_MarkupCompile.cache
+D:\filesFromCDisk\important\mvvmapp\obj\Release\mvvmapp_MarkupCompile.lref

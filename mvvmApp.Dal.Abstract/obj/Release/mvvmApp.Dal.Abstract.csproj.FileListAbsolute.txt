@@ -1,0 +1,14 @@
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\mvvmApp.Dal.Abstract.dll.config
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\mvvmApp.Dal.Abstract.dll
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\mvvmApp.Dal.Abstract.pdb
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\EntityFramework.dll
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\EntityFramework.SqlServer.dll
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\EntityFramework.xml
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\bin\Release\EntityFramework.SqlServer.xml
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.Migrations.InItemOneOrder.resources
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.Migrations.nWindowsMigration.resources
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.Migrations.NotworkingMigration.resources
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.csproj.GenerateResource.cache
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.csproj.CopyComplete
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.dll
+D:\filesFromCDisk\important\mvvmApp.Dal.Abstract\obj\Release\mvvmApp.Dal.Abstract.pdb

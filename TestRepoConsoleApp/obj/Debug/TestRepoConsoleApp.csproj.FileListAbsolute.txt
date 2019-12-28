@@ -1,0 +1,11 @@
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\TestRepoConsoleApp.exe.config
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\TestRepoConsoleApp.exe
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\TestRepoConsoleApp.pdb
+D:\filesFromCDisk\important\TestRepoConsoleApp\obj\Debug\TestRepoConsoleApp.csprojAssemblyReference.cache
+D:\filesFromCDisk\important\TestRepoConsoleApp\obj\Debug\TestRepoConsoleApp.exe
+D:\filesFromCDisk\important\TestRepoConsoleApp\obj\Debug\TestRepoConsoleApp.pdb
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\EntityFramework.dll
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\EntityFramework.xml
+D:\filesFromCDisk\important\TestRepoConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\filesFromCDisk\important\TestRepoConsoleApp\obj\Debug\TestRepoConsoleApp.csproj.CopyComplete

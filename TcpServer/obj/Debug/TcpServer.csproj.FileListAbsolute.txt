@@ -1,0 +1,11 @@
+D:\filesFromCDisk\important\TcpServer\obj\Debug\TcpServer.csprojAssemblyReference.cache
+D:\filesFromCDisk\important\TcpServer\bin\Debug\TcpServer.dll
+D:\filesFromCDisk\important\TcpServer\bin\Debug\TcpServer.pdb
+D:\filesFromCDisk\important\TcpServer\bin\Debug\mvvmApp.Dal.Abstract.dll
+D:\filesFromCDisk\important\TcpServer\bin\Debug\EntityFramework.dll
+D:\filesFromCDisk\important\TcpServer\bin\Debug\mvvmApp.Dal.Abstract.pdb
+D:\filesFromCDisk\important\TcpServer\bin\Debug\EntityFramework.xml
+D:\filesFromCDisk\important\TcpServer\obj\Debug\TcpServer.csproj.CopyComplete
+D:\filesFromCDisk\important\TcpServer\obj\Debug\TcpServer.dll
+D:\filesFromCDisk\important\TcpServer\obj\Debug\TcpServer.pdb
+D:\filesFromCDisk\important\TcpServer\bin\Debug\mvvmApp.Dal.Abstract.dll.config

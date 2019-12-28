@@ -1,0 +1,16 @@
+D:\filesFromCDisk\important\ConsoleTcpServer\obj\Debug\ConsoleTcpServer.csprojAssemblyReference.cache
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\ConsoleTcpServer.exe.config
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\ConsoleTcpServer.exe
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\ConsoleTcpServer.pdb
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\mvvmApp.Dal.Abstract.dll
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\TcpServer.dll
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\EntityFramework.dll
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\mvvmApp.Dal.Abstract.pdb
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\TcpServer.pdb
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\EntityFramework.xml
+D:\filesFromCDisk\important\ConsoleTcpServer\obj\Debug\ConsoleTcpServer.csproj.CopyComplete
+D:\filesFromCDisk\important\ConsoleTcpServer\obj\Debug\ConsoleTcpServer.exe
+D:\filesFromCDisk\important\ConsoleTcpServer\obj\Debug\ConsoleTcpServer.pdb
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\EntityFramework.SqlServer.dll
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\EntityFramework.SqlServer.xml
+D:\filesFromCDisk\important\ConsoleTcpServer\bin\Debug\mvvmApp.Dal.Abstract.dll.config
