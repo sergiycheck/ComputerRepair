@@ -1,0 +1,17 @@
+D:\filesFromCDisk\important\WCFServiceLibDto\obj\Debug\WCFServiceLibDto.csprojAssemblyReference.cache
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\WCFServiceLibDto.dll.config
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\WCFServiceLibDto.dll
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\WCFServiceLibDto.pdb
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\AutoMapper.dll
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\mvvmApp.Dal.Abstract.dll
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\System.ValueTuple.dll
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\EntityFramework.dll
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\AutoMapper.pdb
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\AutoMapper.xml
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\mvvmApp.Dal.Abstract.pdb
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\mvvmApp.Dal.Abstract.dll.config
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\System.ValueTuple.xml
+D:\filesFromCDisk\important\WCFServiceLibDto\bin\Debug\EntityFramework.xml
+D:\filesFromCDisk\important\WCFServiceLibDto\obj\Debug\WCFServiceLibDto.csproj.CopyComplete
+D:\filesFromCDisk\important\WCFServiceLibDto\obj\Debug\WCFServiceLibDto.dll
+D:\filesFromCDisk\important\WCFServiceLibDto\obj\Debug\WCFServiceLibDto.pdb

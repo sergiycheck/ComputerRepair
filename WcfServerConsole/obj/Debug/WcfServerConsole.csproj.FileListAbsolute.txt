@@ -20,3 +20,6 @@ D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\System.ValueTuple.dll
 D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\AutoMapper.pdb
 D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\AutoMapper.xml
 D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\System.ValueTuple.xml
+D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\WCFServiceLibDto.dll
+D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\WCFServiceLibDto.pdb
+D:\filesFromCDisk\important\WcfServerConsole\bin\Debug\WCFServiceLibDto.dll.config

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TestRepoConsoleApp.ServiceReference1;
 //using mvvmApp.Dal.Abstract;
 //using mvvmApp.Dal.Abstract.Entities;
 //using mvvmApp.Dal.Abstract.Repositories;
@@ -63,10 +64,10 @@ namespace TestRepoConsoleApp
         {
             try 
             {
-                //ItemServiceClient client = new ItemServiceClient();
-                //string text = client.getText();
-                //Console.WriteLine(text);
-                //Item[] items = client.GetAllItems();
+                ItemDTOServiceClient clientDto = new ItemDTOServiceClient();
+
+                List<ItemDTO> itemDTOs = new List<ItemDTO>(clientDto.GetAll());
+
 
             }
             catch(Exception ex) 

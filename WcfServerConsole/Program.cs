@@ -7,6 +7,7 @@ using System.ServiceModel;
 using WCFServiceLib;
 using System.Net.Sockets;
 using System.Net;
+using WCFServiceLibDto;
 
 namespace WcfServerConsole
 {
@@ -14,21 +15,50 @@ namespace WcfServerConsole
     {
         static void StartWcf() 
         {
-            try 
+            Task[] tasks = new Task[2] 
             {
-                //Uri baseAddress = new Uri("http://localhost:8733/Design_Time_Addresses/WCFServiceLib/ItemService/");
-                ServiceHost host = new ServiceHost(typeof(ItemService));
+                new Task(()=>
+                {
+                try
+                {
+                    //Uri baseAddress = new Uri("http://localhost:8733/Design_Time_Addresses/WCFServiceLib/ItemService/");
+                    ServiceHost host = new ServiceHost(typeof(ItemService));
 
 
-                host.Open();
-                Console.WriteLine("Hosted");
-                Console.Read();
-                host.Close();
-            }
-            catch(Exception ex) 
+                    host.Open();
+                    Console.WriteLine("Hosted");
+                    Console.Read();
+                    host.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                }),
+                new Task(()=>
+                {
+                try
+                {
+                    ServiceHost host = new ServiceHost(typeof(ItemDTOService));
+
+                    host.Open();
+                    Console.WriteLine("Hosted dto service");
+                    
+                    Console.Read();
+                    host.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                })
+            };
+            foreach(var t in tasks) 
             {
-                Console.WriteLine(ex.Message);
+                t.Start();
             }
+            Task.WaitAll(tasks);
+
         }
         static void Main(string[] args)
         {

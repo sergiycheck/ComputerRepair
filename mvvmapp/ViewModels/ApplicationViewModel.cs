@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using mvvmapp.ServiceReference1;
+using mvvmapp.ServiceReference2;
 
 namespace mvvmapp
 {
@@ -279,12 +280,33 @@ namespace mvvmapp
         private ServiceModuleAdo serviceAdo;
 
         ItemServiceClient client;
+
+        ItemDTOServiceClient clientDto;
         public ApplicationViewModel()
         {
             service = new ServiceModule("mvvmApp.Dal.Abstract.Entities.ApplicationContext");
             serviceAdo = new ServiceModuleAdo();
 
             List<Item> computersIEnum = serviceAdo.Items.GetAllItems().ToList();//service.Items.GetAllItems().ToList();//client.GetAllItems().ToList(); //
+
+
+            try
+            {
+                clientDto = new ItemDTOServiceClient();
+
+                List<ItemDTO> itemDTOs = new List<ItemDTO>(clientDto.GetAll());
+
+                var mapperConfig = new MapperConfiguration(config => config.CreateMap<ItemDTO, ItemModel>());
+                var map = mapperConfig.CreateMapper();
+
+                Computers = new ObservableCollection<ItemModel>
+                    (map.Map<List<ItemDTO>, ObservableCollection<ItemModel>>(itemDTOs));
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
 
             try
             {
@@ -297,6 +319,7 @@ namespace mvvmapp
                         ItemData += item.ToString() + "\n";
                     }
                     client.ItemsFromDatabase(ItemData);
+                    
                 }
                 
             }
@@ -307,13 +330,13 @@ namespace mvvmapp
             }
 
 
-            //Mapper.Initialize(config => config.CreateMap<Item, ItemModel>());
 
-            var mapperConf  = new MapperConfiguration(conf => conf.CreateMap<Item, ItemModel>());
-            var mapper = mapperConf.CreateMapper();
 
-            Computers = new ObservableCollection<ItemModel>
-                (mapper.Map<List<Item>, ObservableCollection<ItemModel>>(computersIEnum));
+            //var mapperConf  = new MapperConfiguration(conf => conf.CreateMap<Item, ItemModel>());
+            //var mapper = mapperConf.CreateMapper();
+
+            //Computers = new ObservableCollection<ItemModel>
+            //    (mapper.Map<List<Item>, ObservableCollection<ItemModel>>(computersIEnum));
             
             
             

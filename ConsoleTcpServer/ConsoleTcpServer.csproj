@@ -60,6 +60,9 @@
     <Reference Include="TcpServer">
       <HintPath>..\TcpServer\bin\Debug\TcpServer.dll</HintPath>
     </Reference>
+    <Reference Include="WCFServiceLibDto">
+      <HintPath>..\WCFServiceLibDto\bin\Debug\WCFServiceLibDto.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
