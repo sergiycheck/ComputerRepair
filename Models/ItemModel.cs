@@ -6,19 +6,28 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
-using mvvmapp.Models;
+using System.Runtime.Serialization;
 
-namespace mvvmapp
+namespace Models
 {
-    public class ItemModel : INotifyPropertyChanged
+    [DataContract(IsReference = true)]
+    public class ItemModel : BaseModel
     {
         private string title;
         private string company;
         private int price;
         private string imagePath;
-        protected ObservableCollection<OrderModel> orders;
+        protected List<OrderModel> orders;
 
-        protected ObservableCollection<DetailModel> details;
+        private ObservableCollection<DetailModel> details;
+        public ItemModel() 
+        {
+
+        }
+        public ItemModel(List<OrderModel> Orders) 
+        {
+            this.Orders = Orders;
+        }
         public int Id { get; set; }
 
         public string Title
@@ -57,7 +66,7 @@ namespace mvvmapp
                 OnPropertyChanged("Price");
             }
         }
-        public ObservableCollection<OrderModel> Orders
+        public virtual List<OrderModel> Orders
         {
             get
             {
@@ -70,7 +79,7 @@ namespace mvvmapp
             }
         }
 
-        public ObservableCollection<DetailModel> Details
+        public virtual ObservableCollection<DetailModel> Details
         {
             get
             {
@@ -82,11 +91,6 @@ namespace mvvmapp
                 OnPropertyChanged("Details");
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+
     }
 }

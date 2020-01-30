@@ -6,16 +6,97 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Controls;
-using mvvmapp.Models;
 using mvvmapp.DTOServiceReference;
 using System.Data.Entity;
+using Models;
 
 namespace mvvmapp
 {
     public class ApplicationViewModel : INotifyPropertyChanged
     {
+        private ObservableCollection<ItemModel> computers = new ObservableCollection<ItemModel>();
+        public ObservableCollection<ItemModel> Computers 
+        {
+            get
+            {
+                if(computers.Count == 0)
+                {
+                    List<ItemDTO> itemDTOs = new List<ItemDTO>(clientDto.GetAllItem());//get all items
+                    computers = GetItemModels(itemDTOs);
+                    return computers;
+                }
+                else 
+                {
+                    return computers;
+                }
+                
+            }
+            set 
+            {
+                computers = value;
+            }
 
-        public ObservableCollection<ItemModel> Computers { get; set; }
+        }
+        public ObservableCollection<ItemModel> GetItemModels(List<ItemDTO> itemDTOs)
+        {
+            try
+            {
+                List<ItemModel> itemModels = new List<ItemModel>();
+                //foreach (var el in itemDTOs) 
+                //{ }
+
+                var mapperConfig = new MapperConfiguration(config =>
+                {
+                    //config.CreateMap<ItemDTO, ItemModel>()
+                    //.ForMember(d => d.Orders, opt => opt.MapFrom
+                    //(src => Mapper.Map<OrderDTO[], List<OrderModel>>(src.Orders))).MaxDepth(3);
+
+                    config.CreateMap<DetailDTO[], ObservableCollection<DetailModel>>().ReverseMap();
+
+                    config.CreateMap<ItemDTO[], List<ItemModel>>().
+                    ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Length));
+                    config.CreateMap<OrderDTO[], List<OrderModel>>().
+                    ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Length));
+
+                    //config.CreateMap<ItemModel,ItemDTO>()
+                    //.ForMember(d=>d.Orders,opt=>opt.MapFrom(src=>src.Orders.ToArray()))
+                    //.ForMember(dest => dest.ExtensionData, opt => opt.Ignore()).ReverseMap().MaxDepth(3);
+                    //config.CreateMap<OrderModel,OrderDTO>()
+                    //.ForMember(d=>d.OrderedComputers,opt=>opt.MapFrom(src=>src.OrderedComputers.ToArray()))
+                    //.ForMember(dest => dest.ExtensionData, opt => opt.Ignore()).ReverseMap().MaxDepth(3);
+
+                    //config.CreateMap<ItemDTO[], List<ItemModel>>();
+                    //config.CreateMap<OrderDTO[], List<OrderModel>>();
+
+                    //config.CreateMap<OrderDTO, OrderModel>().
+                    //ForMember(dest => dest.OrderedComputers, opt => opt.MapFrom
+                    //(src => Mapper.Map<ItemDTO[], List<ItemModel>>(src.OrderedComputers))).MaxDepth(3);
+
+                    config.AllowNullDestinationValues = true;
+                });
+                mapperConfig.AssertConfigurationIsValid();
+
+                var map = mapperConfig.CreateMapper();
+                //ItemModel itemModel = new ItemModel();
+                try
+                {
+                    itemModels = map.Map<List<ItemDTO>, List<ItemModel>>(itemDTOs);
+                }
+                catch (Exception ex)
+                {
+
+
+                }
+                //itemModels.Add(itemModel);
+
+                return new ObservableCollection<ItemModel>(itemModels);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
         public ObservableCollection<ItemModel> OrderedComputers { get; set; }
 
 
@@ -40,7 +121,7 @@ namespace mvvmapp
                                 Price = Convert.ToInt32(result.Children.OfType<TextBox>().FirstOrDefault(n => n.Name == "PriceTxt").Text.ToString())
                             };
 
-                            Computers.Insert(0, computer);
+                            computers.Insert(0, computer);
                             SelectedComputer = computer;
                         } catch (Exception ex)
                         {
@@ -211,114 +292,16 @@ namespace mvvmapp
             }
         }
 
-        public ObservableCollection<ItemModel> GetItemModels(List<ItemDTO> itemDTOs)
-        {
-            try
-            {
-                ObservableCollection<ItemModel> itemModels = new ObservableCollection<ItemModel>();
-                foreach (var el in itemDTOs) 
-                {
-                    var mapperConfig = new MapperConfiguration(config =>
-                    {
-                        config.CreateMap<List<OrderDTO>, ObservableCollection<OrderModel>>().PreserveReferences();
-                        config.CreateMap<List<DetailDTO>, ObservableCollection<DetailModel>>();
-                        config.CreateMap<ItemDTO, ItemModel>();
-                        config.AllowNullDestinationValues = true;
-                    });
-                    mapperConfig.AssertConfigurationIsValid();
 
-                    var map = mapperConfig.CreateMapper();
-                    var dest = map.Map<ItemDTO, ItemModel>(el);
-                    itemModels.Add(dest);
-                }
-
-
-                if (itemModels.Count != 0)
-                {
-                    return itemModels;
-                }
-                else
-                {
-                    itemModels = ManuallyMap(itemDTOs, itemModels);
-                    return itemModels;
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-            return null;
-        }
-        private ObservableCollection<ItemModel> ManuallyMap(List<ItemDTO> itemDTOs, ObservableCollection<ItemModel> itemModels)
-        {
-            foreach (var item in itemDTOs)
-            {
-                ItemModel itemModel = new ItemModel();
-                ObservableCollection<DetailModel> detailModels = new ObservableCollection<DetailModel>();
-                ObservableCollection<OrderModel> orderModels = new ObservableCollection<OrderModel>();
-
-                itemModel.Company = item.Company;
-                itemModel.Id = item.Id;
-                itemModel.ImagePath = item.ImagePath;
-                itemModel.Price = item.Price;
-                itemModel.Title = item.Title;
-
-
-                foreach (var detail in item.Details)
-                {
-                    detailModels.Add
-                        (
-                            new DetailModel()
-                            {
-                                Company = detail.Company,
-                                Id = detail.Id,
-                                ImagePath = detail.ImagePath,
-                                Price = detail.Price,
-                                Status = detail.Status,
-                                Title = detail.Title,
-                                Item = itemModel,
-                                ItemId = itemModel.Id
-                            }
-                        );
-                }
-
-                itemModel.Details = detailModels;
-
-                foreach (var order in item.Orders)
-                {
-                    orderModels.Add
-                    (
-                        new OrderModel()
-                        {
-                            Address = order.Address,
-                            Date = order.Date,
-                            Id = order.Id,
-                            PhoneNumber = order.PhoneNumber,
-                            Sum = order.Sum,
-                            OrderedComputers = itemModels//bag is here because itemModels not fully set 
-                        }
-                    );
-                }
-                itemModel.Orders = orderModels;
-                itemModels.Add(itemModel);
-            }
-            return itemModels;
-        }
-
-
+    
         public DTOServiceClient clientDto;
         public ApplicationViewModel()
         {
 
             try
             {
-                Computers = new ObservableCollection<ItemModel>();
-                clientDto = new DTOServiceClient("BasicHttpBinding_IDTOService");
-
-                List<ItemDTO> itemDTOs = new List<ItemDTO>(clientDto.GetAllItem());//get all items
-
-                Computers = GetItemModels(itemDTOs);
                 
+                clientDto = new DTOServiceClient("BasicHttpBinding_IDTOService");  
             }
             catch (Exception ex)
             {

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
 using mvvmApp.Bll.Intecation.Commands;
 using mvvmApp.Dal.Abstract.Entities;
 using mvvmApp.Dal.Abstract.Repositories;
-using mvvmapp.Models;
+
 
 namespace mvvmapp.ViewModels
 {

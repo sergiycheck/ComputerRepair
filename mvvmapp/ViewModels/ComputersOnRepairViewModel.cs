@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using AutoMapper;
-using mvvmapp.Models;
+
 using mvvmApp.Bll.Intecation.Commands;
 using mvvmApp.Dal.Abstract;
 using mvvmApp.Dal.Abstract.Entities;
 using mvvmApp.Dal.Abstract.Repositories;
 using mvvmapp.DTOServiceReference;
-
+using Models;
 
 namespace mvvmapp
 {
@@ -95,11 +95,12 @@ namespace mvvmapp
         }
         private ItemOnRepair GetItemOnRepair(ItemModel itemModel) 
         {
-            var mapperConf = new MapperConfiguration(
-    config => config.CreateMap<ItemModel, ItemOnRepair>()
-        .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.Orders.First().Id)));
-            var mapper = mapperConf.CreateMapper();
-            return mapper.Map<ItemModel, ItemOnRepair>(itemModel);
+    //        var mapperConf = new MapperConfiguration(
+    //config => config.CreateMap<ItemModel, ItemOnRepair>()
+    //    .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.Orders.First().Id)));
+    //        var mapper = mapperConf.CreateMapper();
+    //        mapper.Map<ItemModel, ItemOnRepair>(itemModel);
+            return null; 
 
         }
         DTOServiceClient clientDto;

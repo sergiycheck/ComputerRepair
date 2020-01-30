@@ -7,13 +7,13 @@ namespace mvvmApp.Dal.Abstract.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class ManuallyManyToMany : IMigrationMetadata
+    public sealed partial class migrationEF : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ManuallyManyToMany));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migrationEF));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001211009116_ManuallyManyToMany"; }
+            get { return "202001241029325_migrationEF"; }
         }
         
         string IMigrationMetadata.Source

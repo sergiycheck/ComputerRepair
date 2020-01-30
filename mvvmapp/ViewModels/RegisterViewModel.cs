@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using mvvmApp.Dal.Abstract.Entities;
 using mvvmApp.Dal.Abstract.Repositories;
-using mvvmapp.Models;
+
 
 using System.Windows;
+using Models;
 
 namespace mvvmapp.ViewModels
 {

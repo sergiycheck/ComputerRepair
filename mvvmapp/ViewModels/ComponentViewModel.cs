@@ -1,4 +1,4 @@
-﻿using mvvmapp.Models;
+﻿
 using mvvmApp.Dal.Abstract.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ using mvvmApp.Dal.Abstract.Entities;
 using AutoMapper;
 using mvvmApp.Bll.Intecation.Commands;
 using System.Windows;
+using Models;
 
 namespace mvvmapp
 {

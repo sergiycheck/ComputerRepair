@@ -9,9 +9,8 @@ namespace mvvmApp.Dal.Abstract.Entities
 {
     [Serializable]
    
-    public class Detail
+    public class Detail : BaseEntity
     {
-        public int Id { get; set; }
         public int? ItemId { get; set; }
         public Item Item { get; set; }
         public bool Status { get; set; }

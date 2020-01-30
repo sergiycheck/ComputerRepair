@@ -8,10 +8,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mvvmapp.Models
+namespace Models
 {
 
-    public class OrderModel : INotifyPropertyChanged
+    public class OrderModel : BaseModel
     {
 
         public int Id { get; set; }
@@ -20,8 +20,15 @@ namespace mvvmapp.Models
         private string phoneNumber;
         private DateTime date;
         private string address;
-        protected ObservableCollection<ItemModel> orderedComputers;
+        private List<ItemModel> orderedComputers;
+        public OrderModel()
+        {
 
+        }
+        public OrderModel(List<ItemModel> OrderedComputers)
+        {
+            this.OrderedComputers = OrderedComputers;
+        }
         public decimal Sum
         {
             get
@@ -77,7 +84,7 @@ namespace mvvmapp.Models
             }
         }
 
-        public ObservableCollection<ItemModel> OrderedComputers
+        public virtual List<ItemModel> OrderedComputers
         {
             get
             {
@@ -91,11 +98,6 @@ namespace mvvmapp.Models
         }
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+
     }
 }

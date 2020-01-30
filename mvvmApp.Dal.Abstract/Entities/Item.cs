@@ -11,12 +11,8 @@ namespace mvvmApp.Dal.Abstract
     
     [Serializable]
     
-    public class Item
+    public class Item:BaseEntity
     {
-       
-        public int Id { get; set; }
-
-        
         public string Title { get; set; }
         
         public string ImagePath { get; set; }
@@ -25,7 +21,7 @@ namespace mvvmApp.Dal.Abstract
        
         public string Company { get; set; }
         
-        public virtual List<ItemOrder> ItemOrders { get; set; }
+        public virtual List<Order> Orders { get; set; }
         public virtual List<Detail> Details { get; set; }
         
         public override  string ToString()

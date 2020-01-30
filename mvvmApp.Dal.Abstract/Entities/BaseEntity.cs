@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mvvmapp.Models
+namespace mvvmApp.Dal.Abstract.Entities
 {
-    public class ItemOnRepair:ItemModel
+    public class BaseEntity
     {
-        public int OrderId;
+        public int Id { get; set; }
     }
 }

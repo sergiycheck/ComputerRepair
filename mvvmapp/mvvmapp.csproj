@@ -49,6 +49,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Models">
+      <HintPath>..\Models\bin\Debug\Models.dll</HintPath>
+    </Reference>
     <Reference Include="mvvmApp.Bll">
       <HintPath>..\mvvmApp.Bll\bin\Debug\mvvmApp.Bll.dll</HintPath>
     </Reference>
@@ -85,10 +88,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Models\DetailModel.cs" />
-    <Compile Include="Models\ItemOnRepair.cs" />
-    <Compile Include="Models\OrderModel.cs" />
-    <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\ActionsItemViewModel.cs" />
     <Compile Include="ViewModels\AddViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -183,7 +182,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -201,7 +199,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagramViewModel.cd" />
     <None Include="Connected Services\DTOServiceReference\DTOService.wsdl" />
     <None Include="Connected Services\DTOServiceReference\item.xsd">
       <SubType>Designer</SubType>

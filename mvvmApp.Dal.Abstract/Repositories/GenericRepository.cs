@@ -65,8 +65,29 @@ namespace mvvmApp.Dal.Abstract.Repositories
 
         public void Update(TEntity entity)
         {
-            Context.Entry(entity).State = EntityState.Modified;
-            Context.SaveChanges();
+            try
+            {
+                Context.Entry(entity).State = EntityState.Modified;
+                Context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                try
+                {
+                    Context.Entry(entity).State = EntityState.Detached;
+                    Context.Entry(entity).State = EntityState.Added;
+                    Context.SaveChanges();
+
+
+                }
+                catch (Exception exeption)
+                {
+
+                    
+                }
+            }
+            
         }
     }
 }

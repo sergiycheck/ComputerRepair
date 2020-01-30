@@ -18,7 +18,7 @@ namespace mvvmApp.Dal.Abstract.Repositories
 
         public List<Order> GetOrdersWithComputers()
         {
-           return Context.Orders.Include(io=>io.ItemOrders).ToList();
+           return Context.Orders.Include(o=>o.OrderedComputers).ToList();
 
         }
 

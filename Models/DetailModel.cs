@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace mvvmapp.Models
+namespace Models
 {
-    public class DetailModel : INotifyPropertyChanged
+    public class DetailModel : BaseModel
     {
         private string title;
         private string company;
@@ -66,11 +66,6 @@ namespace mvvmapp.Models
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+
     }
 }

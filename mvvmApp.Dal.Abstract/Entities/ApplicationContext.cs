@@ -16,7 +16,7 @@ namespace mvvmApp.Dal.Abstract.Entities
         public DbSet<Detail> Details { get; set; }
         
         public DbSet<User> Users { get; set; }
-        public DbSet<ItemOrder> ItemOrders { get; set; }
+
 
         
 
@@ -30,25 +30,12 @@ namespace mvvmApp.Dal.Abstract.Entities
         }
         static ApplicationContext()
         {
-            Database.SetInitializer<ApplicationContext>(new ItemDbInitializer());
+            //Database.SetInitializer<ApplicationContext>(new ItemDbInitializer());
             
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             
-            modelBuilder.Entity<ItemOrder>()
-                .HasKey(k => new { k.ItemId, k.OrderId });
-
-            modelBuilder.Entity<Item>()
-                .HasMany(k => k.ItemOrders)
-                .WithRequired()
-                .HasForeignKey(k=>k.OrderId).WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(k => k.ItemOrders)
-                .WithRequired()
-                .HasForeignKey(k => k.ItemId).WillCascadeOnDelete(false);
-
             base.OnModelCreating(modelBuilder);
 
         }
@@ -57,10 +44,10 @@ namespace mvvmApp.Dal.Abstract.Entities
     {
         protected override void Seed(ApplicationContext db)
         {
-            db.Items.Add(new Item { Title = "Macbook", Company = "Apple", Price = 56000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\1.jpg", Details = null, ItemOrders = null });
-            db.Items.Add(new Item { Title = "Lenovo 330ich", Company = "Lenovo", Price = 60000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\2.jpg", Details = null, ItemOrders = null });
-            db.Items.Add(new Item { Title = "Acer Nitro 5 ", Company = "Acer", Price = 56000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\3.jpg", Details = null, ItemOrders = null });
-            db.Items.Add(new Item { Title = "MSI ps42 modern", Company = "Msi", Price = 35000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\4.jpg", Details = null, ItemOrders = null });
+            db.Items.Add(new Item { Title = "Macbook", Company = "Apple", Price = 56000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\1.jpg", Details = null, Orders = null });
+            db.Items.Add(new Item { Title = "Lenovo 330ich", Company = "Lenovo", Price = 60000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\2.jpg", Details = null, Orders = null });
+            db.Items.Add(new Item { Title = "Acer Nitro 5 ", Company = "Acer", Price = 56000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\3.jpg", Details = null, Orders = null });
+            db.Items.Add(new Item { Title = "MSI ps42 modern", Company = "Msi", Price = 35000, ImagePath = @"D:\filesFromCDisk\important\mvvmapp\Resources\4.jpg", Details = null, Orders = null });
             db.SaveChanges();
         }
     }

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Models;
 using mvvmApp.Dal.Abstract;
 using mvvmApp.Dal.Abstract.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,5 +94,6 @@ namespace mvvmApp.Bll.Mapper
             var orderDtoList = mapper.Map<List<Order>, List<OrderDTO>>(orderList);
             return orderDtoList;
         }
+
     }
 }

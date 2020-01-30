@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.ObjectModel;
-using mvvmapp.Models;
+
 using mvvmApp.Bll.Intecation.Commands;
 using System.Windows;
 using AutoMapper;
 using mvvmapp.DTOServiceReference;
+using Models;
 
 namespace mvvmapp.ViewModels
 {
@@ -108,8 +109,8 @@ namespace mvvmapp.ViewModels
 
             orderClientDTO = new DTOServiceClient("BasicHttpBinding_IDTOService");
             
-            OrderedComputers = new ObservableCollection<ItemModel>();
-            orderedComputers = items;
+            //OrderedComputers = new ObservableCollection<ItemModel>();
+            //orderedComputers = items;
 
         }
 

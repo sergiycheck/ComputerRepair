@@ -1,4 +1,5 @@
-﻿using mvvmapp.ViewModels;
+﻿using Models;
+using mvvmapp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

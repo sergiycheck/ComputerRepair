@@ -7,9 +7,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mvvmapp.Models
+namespace Models
 {
-    public class UserModel:INotifyPropertyChanged
+    public class UserModel: BaseModel
     {
         public int Id { get; set; }
 
@@ -17,7 +17,7 @@ namespace mvvmapp.Models
         private string phoneNumber;
         private string address;
         private string password;
-        protected ObservableCollection<OrderModel> orders;
+        private ObservableCollection<OrderModel> orders;
 
         public string Name
         {
@@ -67,7 +67,7 @@ namespace mvvmapp.Models
                 OnPropertyChanged("Password");
             }
         }
-        public ObservableCollection<OrderModel> Orders
+        public virtual ObservableCollection<OrderModel> Orders
         {
             get
             {
@@ -80,13 +80,7 @@ namespace mvvmapp.Models
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
     }
 
     public enum Role

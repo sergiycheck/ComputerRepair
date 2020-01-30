@@ -57,16 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\ApplicationContext.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Detail.cs" />
-    <Compile Include="Entities\ItemOrder.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Order.cs" />
-    <Compile Include="Migrations\202001211009116_ManuallyManyToMany.cs" />
-    <Compile Include="Migrations\202001211009116_ManuallyManyToMany.designer.cs">
-      <DependentUpon>202001211009116_ManuallyManyToMany.cs</DependentUpon>
+    <Compile Include="Migrations\202001241029325_migrationEF.cs" />
+    <Compile Include="Migrations\202001241029325_migrationEF.designer.cs">
+      <DependentUpon>202001241029325_migrationEF.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +82,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001211009116_ManuallyManyToMany.resx">
-      <DependentUpon>202001211009116_ManuallyManyToMany.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001241029325_migrationEF.resx">
+      <DependentUpon>202001241029325_migrationEF.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using mvvmApp.Dal.Abstract;
 
 using System.Windows;
+using Models;
 
 namespace mvvmapp.ViewModels
 {

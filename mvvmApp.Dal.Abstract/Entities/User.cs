@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace mvvmApp.Dal.Abstract.Entities
 {
     [Serializable]
-    public class User
+    public class User : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }

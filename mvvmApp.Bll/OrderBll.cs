@@ -48,7 +48,7 @@ namespace mvvmApp.Bll
         {
             try
             {
-                return Mapper.Convert(repository.Context.Orders.Include(o => o.ItemOrders).ToList());
+                return Mapper.Convert(repository.GetOrdersWithComputers());
             }
             catch (Exception ex)
             {
