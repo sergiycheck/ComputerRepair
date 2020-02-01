@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mvvmapp.Windows;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -24,23 +25,9 @@ namespace mvvmapp
         
         public MainWindow()
         {
-
-            
             InitializeComponent();
-        }
-        private void LoginBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Navigation.OpenLoginWindow(this, e);
+            frame.Content = new MainWindowPage();
         }
 
-        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Navigation.OpenRegisterWindow(this, e);
-        }
-
-        private void ViewBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Navigation.OpenViewWindow(this, e);
-        }
     }
 }

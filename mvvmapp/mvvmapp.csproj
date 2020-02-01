@@ -99,15 +99,30 @@
     <Compile Include="Windows\AddComputerWindow.xaml.cs">
       <DependentUpon>AddComputerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddComputerWindowPage.xaml.cs">
+      <DependentUpon>AddComputerWindowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ComponentsWindow.xaml.cs">
       <DependentUpon>ComponentsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ComputersOnRepairViewModel.cs" />
+    <Compile Include="Windows\ComponentsWindowPage.xaml.cs">
+      <DependentUpon>ComponentsWindowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ForgotPasswordWindow.xaml.cs">
       <DependentUpon>ForgotPasswordWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ForgotPasswordWindowPage.xaml.cs">
+      <DependentUpon>ForgotPasswordWindowPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HomeWindowPage.xaml.cs">
+      <DependentUpon>HomeWindowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\HomeWorker.xaml.cs">
       <DependentUpon>HomeWorker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HomeWorkerPage.xaml.cs">
+      <DependentUpon>HomeWorkerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -115,21 +130,43 @@
     <Compile Include="Windows\HomeWindow.xaml.cs">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\LoginWindowPage.xaml.cs">
+      <DependentUpon>LoginWindowPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindowPage.xaml.cs">
+      <DependentUpon>MainWindowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Navigation.cs" />
     <Compile Include="Windows\OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\OrderWindowPage.xaml.cs">
+      <DependentUpon>OrderWindowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\RegisterWindowPage.xaml.cs">
+      <DependentUpon>RegisterWindowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UpdateComputerWindow.xaml.cs">
       <DependentUpon>UpdateComputerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UpdateComputerWindowPage.xaml.cs">
+      <DependentUpon>UpdateComputerWindowPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ViewWindow.xaml.cs">
       <DependentUpon>ViewWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ComponentViewModel.cs" />
+    <Compile Include="Windows\ViewWindowPage.xaml.cs">
+      <DependentUpon>ViewWindowPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="Windows\AddComputerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddComputerWindowPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,7 +174,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ComponentsWindowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ForgotPasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForgotPasswordWindowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\HomeWindowPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,7 +194,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\HomeWorkerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LoginWindowPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,7 +223,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\MainWindowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\OrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OrderWindowPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,11 +239,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\RegisterWindowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\UpdateComputerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\UpdateComputerWindowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ViewWindowPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

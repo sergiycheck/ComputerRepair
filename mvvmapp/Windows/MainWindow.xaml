@@ -7,40 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         >
-    <Window.Resources>
-        <BitmapImage x:Key="background" UriSource="../Resources/backgroundNew.jpg"></BitmapImage>
-    </Window.Resources>
-        <Grid>
-        <StackPanel>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" HorizontalAlignment="Center" Height="283" VerticalAlignment="Top" Width="376" Source="{StaticResource background}">
-                </Image>
-            </Grid>
-            <Grid Margin="0 50 0 0 ">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Content="Login" Margin="5 10"  Padding="5" x:Name="LoginBtn" Click="LoginBtn_Click"></Button>
-                <Button Grid.Column="2" Content="Register" Margin="5 10" Padding="5" x:Name="RegisterBtn" Click="RegisterBtn_Click"></Button>
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="118*" />
-                    <ColumnDefinition Width="118*" />
-                    <ColumnDefinition Width="119*" />
-                    <ColumnDefinition Width="40*" />
-                    <ColumnDefinition Width="79*"/>
-                    <ColumnDefinition Width="119*" />
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="2" Content="View" Margin="5.2,10,5,10.2" Padding="5" x:Name="ViewBtn" Click="ViewBtn_Click" ></Button>
-            </Grid>
-        </StackPanel>
+
+    <Grid>
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 
 

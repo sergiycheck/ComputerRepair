@@ -21,6 +21,7 @@ namespace mvvmapp
     public partial class LoginWindow : Window
     {
         private LoginViewModel logModel;
+
         public LoginWindow()
         {
             InitializeComponent();
