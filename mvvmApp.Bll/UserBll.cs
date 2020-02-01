@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace mvvmApp.Bll
 {
@@ -19,6 +20,15 @@ namespace mvvmApp.Bll
             new ApplicationContext
             ("mvvmApp.Dal.Abstract.Entities.ApplicationContext")
             );
+            Mapper = new Mapper.Mapper();
+        }
+        public bool Verify(UserDTO user) 
+        {
+            return repository.Verify(Mapper.Convert(user));
+        }
+        public void Register(UserDTO user) 
+        {
+            repository.Create(Mapper.Convert(user));
         }
 
     }

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-
+﻿using mvvmApp.Bll.Mapper;
 using mvvmApp.Bll.Intecation.Commands;
 using System;
 using System.Collections.Generic;
@@ -7,8 +6,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using mvvmApp.Dal.Abstract;
-
+using DTOs;
+using mvvmApp.Bll;
 using System.Windows;
 using Models;
 
@@ -28,17 +27,11 @@ namespace mvvmapp.ViewModels
                 else
                     return (addComputerCommand = new RelayCommand(ob =>
                     {
-
-                        var mapperConf = new MapperConfiguration(config => config.CreateMap<ItemModel, Item>());
-                        var mapper = mapperConf.CreateMapper();
-                        Item item = mapper.Map<ItemModel, Item>(computer);
-
-                        //serviceAdo.Items.Create(item);
-                        
+                      
                         try 
                         {
-                            ;
-                            
+                            ItemBll.Create(Mapper.Convert(computer));
+
                         }
                         catch(Exception ex) 
                         {
@@ -51,9 +44,22 @@ namespace mvvmapp.ViewModels
             }
         }
 
+        ItemBll ItemBll;
+        Mapper Mapper;
         public AddViewModel()
         {
-            
+            try
+            {
+                Mapper = new Mapper();
+                ItemBll = new ItemBll();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
             computer = new ItemModel();
         }
 

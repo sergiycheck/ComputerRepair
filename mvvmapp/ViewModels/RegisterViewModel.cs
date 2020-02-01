@@ -3,33 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using mvvmApp.Dal.Abstract.Entities;
-using mvvmApp.Dal.Abstract.Repositories;
-
-
 using System.Windows;
 using Models;
+using mvvmApp.Bll;
+using mvvmApp.Bll.Mapper;
+using DTOs;
 
 namespace mvvmapp.ViewModels
 {
     class RegisterViewModel:UserModel
     {
-        
+        UserBll UserBll;
+        Mapper Mapper;
+        public RegisterViewModel() 
+        {
+            UserBll = new UserBll();
+            Mapper = new Mapper();
+
+        }
         public bool Register()
         {
             if (Password != null)
             {
-                User user = new User()
+                UserDTO user = new UserDTO()
                 {
                     Address = Address,
                     Name = Name,
                     Password = Password,
-                    PhoneNumber = PhoneNumber
+                    PhoneNumber = PhoneNumber,
+                    Orders = null
                 };
 
                 try
                 {
-                    
+                    UserBll.Register(user);
                 }
                 catch (Exception ex)
                 {

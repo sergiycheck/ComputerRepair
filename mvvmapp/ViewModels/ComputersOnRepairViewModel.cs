@@ -6,14 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using AutoMapper;
-
 using mvvmApp.Bll.Intecation.Commands;
-using mvvmApp.Dal.Abstract;
-using mvvmApp.Dal.Abstract.Entities;
-using mvvmApp.Dal.Abstract.Repositories;
-using mvvmapp.DTOServiceReference;
 using Models;
+using mvvmApp.Bll;
+using mvvmApp.Bll.Mapper;
+using Models;
+
 
 namespace mvvmapp
 {
@@ -37,8 +35,9 @@ namespace mvvmapp
 
                             try
                             {
+                                OrderBll.Delete(Mapper.Convert(item.Orders.First()));
 
-                                
+
                                 MessageBox.Show("Замовлення номер " + item.OrderId + " успішно виконано. Компютер відремонтований");
                             }
                             catch (Exception ex)
@@ -70,56 +69,40 @@ namespace mvvmapp
                 OnPropertyRaised("SelectedComputer");
             }
         }
-        private ItemDTO getItemDTO(ItemModel el)
-        {
-            var mapperConfDTO = new MapperConfiguration(config =>
-            {
-                config.CreateMap<ItemModel, ItemDTO>();
-                config.CreateMap<OrderModel, OrderDTO>();
-                config.CreateMap<DetailModel, DetailDTO>();
-            });
-            var mapperDTO = mapperConfDTO.CreateMapper();
-            ItemDTO itemDTO = mapperDTO.Map<ItemModel, ItemDTO>(el);
-            return itemDTO;
-        }
-        private ItemModel GetItemModels(ItemDTO itemDTOs)
-        {
-            var mapperConfig = new MapperConfiguration(config =>
-            {
-                config.CreateMap<ItemDTO, ItemModel>();
-                config.CreateMap<OrderDTO, OrderModel>();
-                config.CreateMap<DetailDTO, DetailModel>();
-            });
-            var map = mapperConfig.CreateMapper();
-            return map.Map<ItemDTO,ItemModel>(itemDTOs);
-        }
-        private ItemOnRepair GetItemOnRepair(ItemModel itemModel) 
-        {
-    //        var mapperConf = new MapperConfiguration(
-    //config => config.CreateMap<ItemModel, ItemOnRepair>()
-    //    .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.Orders.First().Id)));
-    //        var mapper = mapperConf.CreateMapper();
-    //        mapper.Map<ItemModel, ItemOnRepair>(itemModel);
-            return null; 
 
-        }
-        DTOServiceClient clientDto;
+
+        
         public ObservableCollection<ItemOnRepair> Computers { get; set; }
+        OrderBll OrderBll;
+        Mapper Mapper;
         public ComputersOnRepairViewModel()
         {
-            clientDto = new DTOServiceClient("BasicHttpBinding_IDTOService");
+            OrderBll = new OrderBll();
+            Mapper = new Mapper();
             Computers = new ObservableCollection<ItemOnRepair>();
             
             try
             {
-                List<OrderDTO> orderDTOs = clientDto.GetOrderedComputers().ToList();
-                foreach(var o in orderDTOs) 
+                //get ordered computers
+                var orders = Mapper.ConvertList(OrderBll.GetOrderWithComputers());
+                foreach(var order in orders) 
                 {
-                    foreach(var c in o.OrderedComputers) 
+                    foreach(var comp in order.OrderedComputers) 
                     {
-                        Computers.Add(GetItemOnRepair(GetItemModels(c)));
+                        
+                        ItemOnRepair itemOnRepair = new ItemOnRepair()
+                        {
+                            OrderId = comp.Orders.First().Id,
+                            Company = comp.Company,
+                            Details = comp.Details,
+                            Id = comp.Id,
+                            ImagePath = comp.ImagePath,
+                            Orders = comp.Orders,
+                            Price = comp.Price,
+                            Title = comp.Title
+                        };
+                        Computers.Add(itemOnRepair);
                     }
-                    
                 }
             }
             catch (Exception ex)

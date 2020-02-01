@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using WCFServiceLibDto.DTOs;
+using DTOs;
 using mvvmApp.Bll.Mapper;
 
 namespace mvvmApp.Bll
@@ -42,8 +42,8 @@ namespace mvvmApp.Bll
 
         public List<ItemDTO> GetAll()
         {
-            var items = repository.GetAll().ToList();
-            return Mapper.ConvertList(items);
+            List<ItemDTO> items = Mapper.ConvertList(repository.GetAll().ToList());
+            return items;
         }
 
         public void Update(ItemDTO elem)

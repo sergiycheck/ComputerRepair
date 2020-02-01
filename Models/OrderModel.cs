@@ -20,12 +20,12 @@ namespace Models
         private string phoneNumber;
         private DateTime date;
         private string address;
-        private List<ItemModel> orderedComputers;
+        private ObservableCollection<ItemModel> orderedComputers;
         public OrderModel()
         {
 
         }
-        public OrderModel(List<ItemModel> OrderedComputers)
+        public OrderModel(ObservableCollection<ItemModel> OrderedComputers)
         {
             this.OrderedComputers = OrderedComputers;
         }
@@ -84,7 +84,7 @@ namespace Models
             }
         }
 
-        public virtual List<ItemModel> OrderedComputers
+        public virtual ObservableCollection<ItemModel> OrderedComputers
         {
             get
             {

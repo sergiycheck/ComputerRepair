@@ -5,24 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using mvvmApp.Bll.Intecation.Commands;
-using mvvmApp.Dal.Abstract.Entities;
-using mvvmApp.Dal.Abstract.Repositories;
-
+using mvvmApp.Bll;
+using mvvmApp.Bll.Mapper;
+using DTOs;
 
 namespace mvvmapp.ViewModels
 {
     public class LoginViewModel:UserModel
     {
-
+        UserBll userBll;
+        Mapper Mapper;
+        public LoginViewModel() 
+        {
+            userBll = new UserBll();
+            Mapper = new Mapper();
+        }
         public bool Verify()
         {
-            User model = new User()
+            
+            UserDTO user = new UserDTO()
             {
+                Address = Address,
+                Id = Id,
+                Name = Name,
                 Password = Password,
+                Orders = Mapper.ConvertList(Orders),
                 PhoneNumber = PhoneNumber
             };
-            UserRepository<User> repository = new UserRepository<User>(new ApplicationContext("mvvmApp.Dal.Abstract.Entities.ApplicationContext"));
-            return repository.Verify(model);
+            return userBll.Verify(user);
 
         }
     }

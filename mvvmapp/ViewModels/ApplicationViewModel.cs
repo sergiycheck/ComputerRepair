@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿
 using mvvmApp.Bll.Intecation.Commands;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Controls;
-using mvvmapp.DTOServiceReference;
+using mvvmApp.Bll;
 using System.Data.Entity;
 using Models;
+using DTOs;
+using mvvmApp.Bll.Mapper;
 
 namespace mvvmapp
 {
@@ -21,8 +23,9 @@ namespace mvvmapp
             {
                 if(computers.Count == 0)
                 {
-                    List<ItemDTO> itemDTOs = new List<ItemDTO>(clientDto.GetAllItem());//get all items
-                    computers = GetItemModels(itemDTOs);
+                    //get all items
+                    computers = Mapper.ConvertList(ItemBll.GetAll());
+                    
                     return computers;
                 }
                 else 
@@ -37,66 +40,7 @@ namespace mvvmapp
             }
 
         }
-        public ObservableCollection<ItemModel> GetItemModels(List<ItemDTO> itemDTOs)
-        {
-            try
-            {
-                List<ItemModel> itemModels = new List<ItemModel>();
-                //foreach (var el in itemDTOs) 
-                //{ }
 
-                var mapperConfig = new MapperConfiguration(config =>
-                {
-                    //config.CreateMap<ItemDTO, ItemModel>()
-                    //.ForMember(d => d.Orders, opt => opt.MapFrom
-                    //(src => Mapper.Map<OrderDTO[], List<OrderModel>>(src.Orders))).MaxDepth(3);
-
-                    config.CreateMap<DetailDTO[], ObservableCollection<DetailModel>>().ReverseMap();
-
-                    config.CreateMap<ItemDTO[], List<ItemModel>>().
-                    ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Length));
-                    config.CreateMap<OrderDTO[], List<OrderModel>>().
-                    ForMember(dest => dest.Capacity, opt => opt.MapFrom(src => src.Length));
-
-                    //config.CreateMap<ItemModel,ItemDTO>()
-                    //.ForMember(d=>d.Orders,opt=>opt.MapFrom(src=>src.Orders.ToArray()))
-                    //.ForMember(dest => dest.ExtensionData, opt => opt.Ignore()).ReverseMap().MaxDepth(3);
-                    //config.CreateMap<OrderModel,OrderDTO>()
-                    //.ForMember(d=>d.OrderedComputers,opt=>opt.MapFrom(src=>src.OrderedComputers.ToArray()))
-                    //.ForMember(dest => dest.ExtensionData, opt => opt.Ignore()).ReverseMap().MaxDepth(3);
-
-                    //config.CreateMap<ItemDTO[], List<ItemModel>>();
-                    //config.CreateMap<OrderDTO[], List<OrderModel>>();
-
-                    //config.CreateMap<OrderDTO, OrderModel>().
-                    //ForMember(dest => dest.OrderedComputers, opt => opt.MapFrom
-                    //(src => Mapper.Map<ItemDTO[], List<ItemModel>>(src.OrderedComputers))).MaxDepth(3);
-
-                    config.AllowNullDestinationValues = true;
-                });
-                mapperConfig.AssertConfigurationIsValid();
-
-                var map = mapperConfig.CreateMapper();
-                //ItemModel itemModel = new ItemModel();
-                try
-                {
-                    itemModels = map.Map<List<ItemDTO>, List<ItemModel>>(itemDTOs);
-                }
-                catch (Exception ex)
-                {
-
-
-                }
-                //itemModels.Add(itemModel);
-
-                return new ObservableCollection<ItemModel>(itemModels);
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-        }
         public ObservableCollection<ItemModel> OrderedComputers { get; set; }
 
 
@@ -141,7 +85,7 @@ namespace mvvmapp
                 else
                     return (addComputerToDatabaseCommand = new RelayCommand(ob =>
                     {
-                        ItemModel el = ob as ItemModel;
+                        ItemModel item = ob as ItemModel;
 
 
                         if (ob != null)
@@ -149,7 +93,8 @@ namespace mvvmapp
 
                             try
                             {
-                                clientDto.CreateItem(getItemDTO(el), new DetailDTO());
+                                //creating
+                                ItemBll.Create(Mapper.Convert(item));
                             }
                             catch (Exception ex)
                             {
@@ -177,7 +122,8 @@ namespace mvvmapp
 
                             try
                             {
-                                clientDto.DeleteItem(getItemDTO(item));
+                                //deleting
+                                ItemBll.Delete(Mapper.Convert(item));
 
                             }
                             catch (Exception ex)
@@ -205,7 +151,7 @@ namespace mvvmapp
                     {
                         try
                         {
-
+                           
                         }
                         catch (Exception ex)
                         {
@@ -215,18 +161,7 @@ namespace mvvmapp
             }
         }
 
-        private ItemDTO getItemDTO(ItemModel el)
-        {
-            var mapperConfDTO = new MapperConfiguration(config =>
-            {
-                config.CreateMap<ItemModel, ItemDTO>();
-                config.CreateMap<OrderModel, OrderDTO>();
-                config.CreateMap<DetailModel, DetailDTO>();
-            });
-            var mapperDTO = mapperConfDTO.CreateMapper();
-            ItemDTO itemDTO = mapperDTO.Map<ItemModel, ItemDTO>(el);
-            return itemDTO;
-        }
+
         private RelayCommand updateComputerCommand;
         public RelayCommand UpdateComputerCommand
         {
@@ -237,13 +172,15 @@ namespace mvvmapp
                 else
                     return (updateComputerCommand = new RelayCommand(ob =>
                     {
-                        ItemModel el = ob as ItemModel;
+                        ItemModel item = ob as ItemModel;
 
                         if (ob != null)
                         {
                             try
                             {
-                                clientDto.UpdateItem(getItemDTO(el));
+                                //updating
+                                ItemBll.Update(Mapper.Convert(item));
+
                             } catch (Exception ex)
                             {
 
@@ -293,15 +230,16 @@ namespace mvvmapp
         }
 
 
-    
-        public DTOServiceClient clientDto;
+
+        ItemBll ItemBll;
+        Mapper Mapper;
         public ApplicationViewModel()
         {
 
             try
             {
-                
-                clientDto = new DTOServiceClient("BasicHttpBinding_IDTOService");  
+                Mapper = new Mapper();
+                ItemBll = new ItemBll();
             }
             catch (Exception ex)
             {

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.ObjectModel;
-
 using mvvmApp.Bll.Intecation.Commands;
 using System.Windows;
-using AutoMapper;
-using mvvmapp.DTOServiceReference;
+using mvvmApp.Bll;
+using mvvmApp.Bll.Mapper;
 using Models;
 
 namespace mvvmapp.ViewModels
@@ -70,22 +69,9 @@ namespace mvvmapp.ViewModels
                         
                         try
                         {
-                            var mapperConf = new MapperConfiguration(config =>
-                            {
-                                config.CreateMap<ItemModel, ItemDTO>()
-                                .ForMember(dest=>dest.ExtensionData,opt=>opt.Ignore());//took >3 hours to solve
-                                config.CreateMap<OrderModel, OrderDTO>()
-                                .ForMember(dest=>dest.ExtensionData,opt=>opt.Ignore());
-                                config.CreateMap<DetailModel, DetailDTO>()
-                                .ForMember(dest => dest.ExtensionData, opt => opt.Ignore());
-                                
-                            });
-                            
-                            mapperConf.AssertConfigurationIsValid();
-                            var mapper = mapperConf.CreateMapper();
-                            var orderDTO = mapper.Map<OrderModel, OrderDTO> (order);
-                            orderClientDTO.CreateOrder(orderDTO);
-                            MessageBox.Show("Замовлення оформлено. Сума =  "+orderDTO.Sum.ToString()); 
+                            OrderBll.Create(Mapper.Convert(order));
+                            MessageBox.Show("Замовлення оформлено. Сума =  " + order.Sum.ToString());
+
                         }
                         catch (Exception ex)
                         {
@@ -101,16 +87,20 @@ namespace mvvmapp.ViewModels
 
 
 
-        DTOServiceClient orderClientDTO;
+        OrderBll OrderBll;
+        Mapper Mapper;
         public OrderViewModel(ObservableCollection<ItemModel> items)
         {
+            OrderedComputers = items;
+            try
+            {
+                Mapper = new Mapper();
+                OrderBll = new OrderBll();
+            }
+            catch (Exception ex)
+            {
 
-
-
-            orderClientDTO = new DTOServiceClient("BasicHttpBinding_IDTOService");
-            
-            //OrderedComputers = new ObservableCollection<ItemModel>();
-            //orderedComputers = items;
+            }
 
         }
 

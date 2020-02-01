@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using mvvmApp.Dal.Abstract.Entities;
 using mvvmApp.Dal.Abstract;
 using AutoMapper;
-using WCFServiceLibDto.DTOs;
+
 using mvvmApp.Dal.Abstract.Repositories;
 using System.Data.Entity;
+using DTOs;
 
 namespace mvvmApp.Bll
 {
@@ -56,6 +57,10 @@ namespace mvvmApp.Bll
                
             }
             return null;
+        }
+        public void Delete(OrderDTO orderDTO) 
+        {
+            repository.Delete(Mapper.Convert(orderDTO));
         }
     }
 }

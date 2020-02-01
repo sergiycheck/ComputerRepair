@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WCFServiceLibDto.DTOs
+namespace DTOs
 {
     [DataContract]
     public class DetailDTO

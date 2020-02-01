@@ -17,14 +17,14 @@ namespace Models
         private string company;
         private int price;
         private string imagePath;
-        protected List<OrderModel> orders;
+        protected ObservableCollection<OrderModel> orders;
 
         private ObservableCollection<DetailModel> details;
         public ItemModel() 
         {
 
         }
-        public ItemModel(List<OrderModel> Orders) 
+        public ItemModel(ObservableCollection<OrderModel> Orders) 
         {
             this.Orders = Orders;
         }
@@ -66,7 +66,7 @@ namespace Models
                 OnPropertyChanged("Price");
             }
         }
-        public virtual List<OrderModel> Orders
+        public virtual ObservableCollection<OrderModel> Orders
         {
             get
             {
