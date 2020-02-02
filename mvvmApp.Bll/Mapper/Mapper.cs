@@ -99,22 +99,28 @@ namespace mvvmApp.Bll.Mapper
             var mapperConf = new MapperConfiguration
                 (config =>
                 {
-                    config.CreateMap<ItemDTO, ItemModel>();
-                    config.CreateMap<OrderDTO, OrderModel>();
-                    config.CreateMap<DetailDTO, DetailModel>();
+                    config.CreateMap<ItemDTO, ItemModel>().MaxDepth(3);
+                    config.CreateMap<OrderDTO, OrderModel>().MaxDepth(3);
+                    config.CreateMap<DetailDTO, DetailModel>().MaxDepth(3);
+                    config.CreateMap<List<ItemDTO>, ObservableCollection<ItemModel>>();
+                    config.CreateMap< List<OrderDTO>, ObservableCollection<OrderModel>>();
+                    config.CreateMap< List<DetailDTO>, ObservableCollection<DetailModel>>();
                 });
             var mapper = mapperConf.CreateMapper();
-            var ItemModels = mapper.Map<List<ItemDTO>, ObservableCollection<ItemModel>>(itemDTOs);
-            return ItemModels;
+            var ItemModels = mapper.Map<List<ItemDTO>, List<ItemModel>>(itemDTOs);
+            return new ObservableCollection<ItemModel>(ItemModels);
         }
         public ObservableCollection<OrderModel> ConvertList(List<OrderDTO> orderDTOs)
         {
             var mapperConf = new MapperConfiguration
                 (config =>
                 {
-                    config.CreateMap<ItemDTO, ItemModel>();
-                    config.CreateMap<OrderDTO, OrderModel>();
-                    config.CreateMap<DetailDTO, DetailModel>();
+                    config.CreateMap<ItemDTO, ItemModel>().MaxDepth(4);
+                    config.CreateMap<OrderDTO, OrderModel>().MaxDepth(4);
+                    config.CreateMap<DetailDTO, DetailModel>().MaxDepth(4);
+                    config.CreateMap<List<ItemDTO>, ObservableCollection<ItemModel>>();
+                    config.CreateMap<List<OrderDTO>, ObservableCollection<OrderModel>>();
+                    config.CreateMap<List<DetailDTO>, ObservableCollection<DetailModel>>();
                 });
             var mapper = mapperConf.CreateMapper();
             var OrderModels = mapper.Map<List<OrderDTO>, ObservableCollection<OrderModel>>(orderDTOs);

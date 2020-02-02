@@ -10,6 +10,17 @@ namespace DTOs
     [DataContract (IsReference =true)]//took a lot of time to handle http error
     public class ItemDTO
     {
+        public ItemDTO() 
+        { }
+        public ItemDTO(List<OrderDTO> orderDTOs) 
+        {
+            Orders = orderDTOs;
+        }
+        public ItemDTO(List<OrderDTO> orderDTOs, List<DetailDTO> detailDTOs)
+        {
+            Orders = orderDTOs;
+            Details = detailDTOs;
+        }
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -25,5 +36,6 @@ namespace DTOs
         public List<OrderDTO> Orders { get; set; }
         [DataMember]
         public List<DetailDTO> Details { get; set; }
+
     }
 }

@@ -11,6 +11,13 @@ namespace DTOs
     [DataContract]
     public class OrderDTO
     {
+        public OrderDTO() 
+        {
+        }
+        public OrderDTO(List<ItemDTO> itemDTOs) 
+        {
+            OrderedComputers = itemDTOs;
+        }
         [DataMember]
         public int Id { get; set; }
 
@@ -29,5 +36,6 @@ namespace DTOs
 
         [DataMember]
         public List<ItemDTO> OrderedComputers { get; set; }
+
     }
 }

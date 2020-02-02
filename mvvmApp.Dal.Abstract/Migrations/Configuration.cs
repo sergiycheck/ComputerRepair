@@ -9,7 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;//was true
         }
 
         protected override void Seed(Entities.ApplicationContext context)

@@ -9,7 +9,14 @@ namespace DTOs
 {
     [DataContract]
     public class UserDTO
-    {   
+    {
+        public UserDTO() 
+        {
+        }
+        public UserDTO(List<OrderDTO> orderDTOs) 
+        {
+            Orders = orderDTOs;
+        }
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -22,5 +29,6 @@ namespace DTOs
         public string Password { get; set; }
         [DataMember]
         public List<OrderDTO> Orders { get; set; }
+
     }
 }

@@ -24,7 +24,15 @@ namespace mvvmapp
                 if(computers.Count == 0)
                 {
                     //get all items
-                    computers = Mapper.ConvertList(ItemBll.GetAll());
+                    try
+                    {
+                        computers = Mapper.ConvertList(ItemBll.GetAll());
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    
                     
                     return computers;
                 }
