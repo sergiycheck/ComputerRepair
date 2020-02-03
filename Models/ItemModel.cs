@@ -28,6 +28,11 @@ namespace Models
         {
             this.Orders = Orders;
         }
+        public ItemModel(ObservableCollection<OrderModel> Orders, ObservableCollection<DetailModel> Details)
+        {
+            this.Orders = Orders;
+            this.Details = Details;
+        }
         public int Id { get; set; }
 
         public string Title

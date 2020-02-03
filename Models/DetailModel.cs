@@ -20,6 +20,14 @@ namespace Models
         public int Id { get; set; }
         public int? ItemId { get; set; }
         public ItemModel Item { get; set; }
+        public DetailModel()
+        {
+
+        }
+        public DetailModel(ItemModel Item) 
+        {
+            this.Item = Item;
+        }
         public bool Status 
         {
             get { return status; }

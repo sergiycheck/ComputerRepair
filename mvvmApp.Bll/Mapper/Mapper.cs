@@ -123,8 +123,8 @@ namespace mvvmApp.Bll.Mapper
                     config.CreateMap<List<DetailDTO>, ObservableCollection<DetailModel>>();
                 });
             var mapper = mapperConf.CreateMapper();
-            var OrderModels = mapper.Map<List<OrderDTO>, ObservableCollection<OrderModel>>(orderDTOs);
-            return OrderModels;
+            var OrderModels = mapper.Map<List<OrderDTO>, List<OrderModel>>(orderDTOs);
+            return new ObservableCollection<OrderModel>(OrderModels);
         }
         public ItemModel ConvertToModel(ItemDTO itemDTO)
         {

@@ -18,7 +18,11 @@ namespace Models
         private string address;
         private string password;
         private ObservableCollection<OrderModel> orders;
-
+        public UserModel() { }
+        public UserModel(ObservableCollection<OrderModel> Orders)
+        {
+            this.Orders = Orders;
+        }
         public string Name
         {
             get

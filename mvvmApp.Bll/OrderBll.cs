@@ -41,6 +41,7 @@ namespace mvvmApp.Bll
             }
             
         }
+        
         public OrderDTO Get(int id)
         {
             return Mapper.Convert(repository.GetById(id));
@@ -49,7 +50,9 @@ namespace mvvmApp.Bll
         {
             try
             {
-                return Mapper.Convert(repository.GetOrdersWithComputers());
+                var orders = Mapper.Convert(repository.GetAll().ToList());
+                return orders;
+                //return Mapper.Convert(repository.GetOrdersWithComputers());
             }
             catch (Exception ex)
             {
