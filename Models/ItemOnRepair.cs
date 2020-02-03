@@ -8,6 +8,6 @@ namespace Models
 {
     public class ItemOnRepair:ItemModel
     {
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
     }
 }

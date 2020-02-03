@@ -46,12 +46,20 @@ namespace mvvmApp.Bll
         {
             return Mapper.Convert(repository.GetById(id));
         }
-        public List<OrderDTO> GetOrderWithComputers()
+        public List<ItemDTO> GetOrderWithComputers()
         {
             try
             {
                 var orders = Mapper.Convert(repository.GetAll().ToList());
-                return orders;
+                List<ItemDTO> items = new List<ItemDTO>();
+                foreach(var o in orders)
+                {
+                    foreach(var i in o.OrderedComputers) 
+                    {
+                        items.Add(i);
+                    }
+                }
+                return items;
                 //return Mapper.Convert(repository.GetOrdersWithComputers());
             }
             catch (Exception ex)

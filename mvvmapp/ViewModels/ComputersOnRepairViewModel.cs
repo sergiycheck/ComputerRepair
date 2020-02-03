@@ -84,26 +84,25 @@ namespace mvvmapp
             try
             {
                 //get ordered computers
-                var orders = Mapper.ConvertList(OrderBll.GetOrderWithComputers());
-                foreach(var order in orders) 
+                var orderedItems = Mapper.ConvertList(OrderBll.GetOrderWithComputers());
+
+                foreach(var comp in orderedItems) 
                 {
-                    foreach(var comp in order.OrderedComputers) 
+
+                    ItemOnRepair itemOnRepair = new ItemOnRepair()
                     {
-                        
-                        ItemOnRepair itemOnRepair = new ItemOnRepair()
-                        {
-                            OrderId = comp.Orders.First().Id,
-                            Company = comp.Company,
-                            Details = comp.Details,
-                            Id = comp.Id,
-                            ImagePath = comp.ImagePath,
-                            Orders = comp.Orders,
-                            Price = comp.Price,
-                            Title = comp.Title
-                        };
-                        Computers.Add(itemOnRepair);
-                    }
+                        OrderId = comp.Orders.Count == 0 ? (int?)null : comp.Orders.First().Id,
+                        Company = comp.Company,
+                        Details = comp.Details,
+                        Id = comp.Id,
+                        ImagePath = comp.ImagePath,
+                        Orders = comp.Orders,
+                        Price = comp.Price,
+                        Title = comp.Title
+                    };
+                    Computers.Add(itemOnRepair);
                 }
+
             }
             catch (Exception ex)
             {
