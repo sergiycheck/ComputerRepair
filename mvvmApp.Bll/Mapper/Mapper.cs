@@ -118,9 +118,13 @@ namespace mvvmApp.Bll.Mapper
                     config.CreateMap<ItemDTO, ItemModel>().MaxDepth(4);
                     config.CreateMap<OrderDTO, OrderModel>().MaxDepth(4);
                     config.CreateMap<DetailDTO, DetailModel>().MaxDepth(4);
-                    config.CreateMap<List<ItemDTO>, ObservableCollection<ItemModel>>();
-                    config.CreateMap<List<OrderDTO>, ObservableCollection<OrderModel>>();
-                    config.CreateMap<List<DetailDTO>, ObservableCollection<DetailModel>>();
+                    config.CreateMap<List<OrderDTO>, ItemModel>().MaxDepth(4)
+                    .ForMember(dest=>dest.Orders, opt=>opt.MapFrom(src=>src));
+                    config.CreateMap<List<ItemDTO>, OrderModel>().MaxDepth(4)
+                    .ForMember(dest => dest.OrderedComputers, opt => opt.MapFrom(src => src));
+                    //config.CreateMap<List<ItemDTO>, ObservableCollection<ItemModel>>();
+                    //config.CreateMap<List<OrderDTO>, ObservableCollection<OrderModel>>();
+                    //config.CreateMap<List<DetailDTO>, ObservableCollection<DetailModel>>();
                 });
             var mapper = mapperConf.CreateMapper();
             var OrderModels = mapper.Map<List<OrderDTO>, List<OrderModel>>(orderDTOs);
