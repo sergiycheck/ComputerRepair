@@ -124,6 +124,7 @@ namespace mvvmapp
                     return (deleteComputerCommand = new RelayCommand(ob =>
                     {
                         ItemModel item = ob as ItemModel;
+
                         if (ob != null)
                         {
                             Computers.Remove(item);

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace Models
 {
@@ -19,68 +12,53 @@ namespace Models
         private string password;
         private ObservableCollection<OrderModel> orders;
         public UserModel() { }
-        public UserModel(ObservableCollection<OrderModel> Orders)
+        public UserModel(ObservableCollection<OrderModel> orders)
         {
-            this.Orders = Orders;
+            this.orders = orders;
         }
         public string Name
         {
-            get
-            {
-                return name;
-            }
+            get => name;
             set
             {
                 name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged(default);
             }
         }
         public string PhoneNumber
         {
-            get
-            {
-                return phoneNumber;
-            }
+            get => phoneNumber;
             set
             {
                 phoneNumber = value;
-                OnPropertyChanged("PhoneNumber");
+                OnPropertyChanged(default);
             }
         }
         public string Address
         {
-            get
-            {
-                return address;
-            }
+            get => address;
             set
             {
                 address = value;
-                OnPropertyChanged("Address");
+                OnPropertyChanged(default);
             }
         }
         public string Password
         {
-            get
-            {
-                return password;
-            }
+            get => password;
             set
             {
                 password = value;
-                OnPropertyChanged("Password");
+                OnPropertyChanged(default);
             }
         }
         public virtual ObservableCollection<OrderModel> Orders
         {
-            get
-            {
-                return orders;
-            }
+            get => orders;
             set
             {
                 orders = value;
-                OnPropertyChanged("Orders");
+                OnPropertyChanged(default);
             }
         }
 

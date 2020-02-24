@@ -64,9 +64,9 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Order.cs" />
-    <Compile Include="Migrations\202001241029325_migrationEF.cs" />
-    <Compile Include="Migrations\202001241029325_migrationEF.designer.cs">
-      <DependentUpon>202001241029325_migrationEF.cs</DependentUpon>
+    <Compile Include="Migrations\202002241241473_EFmigration.cs" />
+    <Compile Include="Migrations\202002241241473_EFmigration.designer.cs">
+      <DependentUpon>202002241241473_EFmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +82,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001241029325_migrationEF.resx">
-      <DependentUpon>202001241029325_migrationEF.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002241241473_EFmigration.resx">
+      <DependentUpon>202002241241473_EFmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,7 +13,7 @@ namespace mvvmApp.Dal.Abstract.Entities
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string Password { get; set; }
-        public List<Order> Orders { get; set; }
+        public virtual List<Order> Orders { get; set; }
         public override string ToString()
         {
             return "Name = " + Name + " PhoneNumber+ " + PhoneNumber + " Address = " + Address + " Password = " + Password;

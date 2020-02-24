@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;//visual studio don't hint this using 
+using System.Data.Entity;
+using System.Windows.Documents;
+
+//visual studio don't hint this using 
 
 namespace mvvmApp.Dal.Abstract.Repositories
 {
@@ -18,8 +21,11 @@ namespace mvvmApp.Dal.Abstract.Repositories
 
         public List<Order> GetOrdersWithComputers()
         {
-            List<Order> orders = Context.Orders.Include(o => o.OrderedComputers).ToList();
-            return orders;
+            
+            var orders = DbSet.Include(o=>o.OrderedComputers).ToList();
+            
+
+            return new List<Order>(orders);
 
         }
 

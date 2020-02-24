@@ -30,27 +30,32 @@ namespace mvvmApp.Dal.Abstract.Repositories
 
         public void Delete(TEntity entity)
         {
-            
+
             try
             {
+                //set private field to null;//not working entities are the same but entity framework detects them as different
+
                 DbSet.Remove(entity);
                 Context.SaveChanges();
 
             }
             catch (Exception ex)
             {
+                try
+                {
+                    DbSet.Attach(entity);
 
-            }
-            try
-            {
+                    Context.Entry(entity).State = EntityState.Deleted;
+                    Context.SaveChanges();
+                }
+                catch (Exception exe)
+                {
 
-                Context.Entry(entity).State = EntityState.Deleted;
-                Context.SaveChanges();
+                }
             }
-            catch (Exception ex)
-            {
 
-            }
+
+
         }
 
         public IEnumerable<TEntity> GetAll()

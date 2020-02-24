@@ -20,10 +20,12 @@ namespace mvvmApp.Dal.Abstract
         public int Price { get; set; }
        
         public string Company { get; set; }
-        
+
+
         public virtual List<Order> Orders { get; set; }
+
         public virtual List<Detail> Details { get; set; }
-        
+
         public override  string ToString()
         {
             return "Id = "+Id+" Title = " + Title + " Price = " + Price + " Company = " + Company + System.Environment.NewLine +

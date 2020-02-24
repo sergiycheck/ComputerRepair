@@ -16,17 +16,17 @@ namespace mvvmApp.Dal.Abstract.Entities
         public DbSet<Detail> Details { get; set; }
         
         public DbSet<User> Users { get; set; }
-
+        
 
         
 
         public ApplicationContext()
         {
-
+            
         }
         public ApplicationContext(string connectionString) : base(connectionString)
         {
-           
+            //this.Configuration.ProxyCreationEnabled = false;
         }
         static ApplicationContext()
         {

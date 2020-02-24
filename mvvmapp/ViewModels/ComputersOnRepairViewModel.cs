@@ -35,7 +35,8 @@ namespace mvvmapp
 
                             try
                             {
-                                OrderBll.Delete(Mapper.Convert(item.Orders.First()));
+                                
+                                OrderBll.Delete(item.Id, item.OrderId);
 
 
                                 MessageBox.Show("Замовлення номер " + item.OrderId + " успішно виконано. Компютер відремонтований");
@@ -86,22 +87,33 @@ namespace mvvmapp
                 //get ordered computers
                 var orderedItems = Mapper.ConvertList(OrderBll.GetOrderWithComputers());
 
-                //foreach(var comp in orderedItems) 
-                //{
+                foreach (var ord in orderedItems)
+                {
+                    foreach(var item in ord.OrderedComputers) 
+                    {
+                        try
+                        {
+                            ItemOnRepair itemOnRepair = new ItemOnRepair()
+                            {
+                                OrderId = ord.Id,
+                                Company = item.Company,
+                                Details = item.Details,
+                                Id = item.Id,
+                                ImagePath = item.ImagePath,
+                                Orders = item.Orders,
+                                Price = item.Price,
+                                Title = item.Title
+                            };
+                            Computers.Add(itemOnRepair);
+                        }
+                        catch (Exception ex)
+                        {
 
-                //    ItemOnRepair itemOnRepair = new ItemOnRepair()
-                //    {
-                //        OrderId = comp.Orders.Count == 0 ? (int?)null : comp.Orders.First().Id,
-                //        Company = comp.Company,
-                //        Details = comp.Details,
-                //        Id = comp.Id,
-                //        ImagePath = comp.ImagePath,
-                //        Orders = comp.Orders,
-                //        Price = comp.Price,
-                //        Title = comp.Title
-                //    };
-                //    Computers.Add(itemOnRepair);
-                //}
+                        }
+                        
+                    }
+                    
+                }
 
             }
             catch (Exception ex)

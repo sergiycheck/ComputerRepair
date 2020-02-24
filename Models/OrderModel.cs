@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Models
 {
@@ -25,75 +18,64 @@ namespace Models
         {
 
         }
-        public OrderModel(ObservableCollection<ItemModel> OrderedComputers)
+        public OrderModel(ObservableCollection<ItemModel> orderedComputers)
         {
-            this.OrderedComputers = OrderedComputers;
+            this.orderedComputers = orderedComputers;
         }
         public decimal Sum
         {
-            get
-            {
-                return sum;
-            }
+            get => sum;
             set
             {
-                foreach(var el in orderedComputers)
+
+                foreach (var el in orderedComputers)
                 {
-                    sum += el.Price;
+                    if(el!=null)
+                        sum += el.Price;
                 }
-                OnPropertyChanged("Sum");
+                OnPropertyChanged(default);
+
+
             }
         }
 
         public string PhoneNumber
         {
-            get
-            {
-                return phoneNumber;
-            }
+            get => phoneNumber;
             set
             {
                 phoneNumber = value;
-                OnPropertyChanged("PhoneNumber");
+                OnPropertyChanged(default);
             }
         }
 
         public DateTime Date
         {
-            get
-            {
-                return date;
-            }
+            get => date;
             set
             {
                 date = DateTime.Now;
-                OnPropertyChanged("Date");
+                OnPropertyChanged(default);
             }
         }
 
         public string Address
         {
-            get
-            {
-                return address;
-            }
+            get => address;
             set
             {
                 address = value;
-                OnPropertyChanged("Address");
+                OnPropertyChanged(default);
             }
         }
 
         public virtual ObservableCollection<ItemModel> OrderedComputers
         {
-            get
-            {
-                return orderedComputers;
-            }
+            get => orderedComputers;
             set
             {
                 orderedComputers = value;
-                OnPropertyChanged("OrderedComputers");
+                OnPropertyChanged(default);
             }
         }
 

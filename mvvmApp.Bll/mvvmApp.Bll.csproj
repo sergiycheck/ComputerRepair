@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailBll.cs" />
     <Compile Include="Intecation\Commands\RelayCommand.cs" />
     <Compile Include="ItemBll.cs" />
     <Compile Include="Mapper\Mapper.cs" />

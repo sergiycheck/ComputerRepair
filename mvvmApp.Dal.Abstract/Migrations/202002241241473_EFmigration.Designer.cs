@@ -7,13 +7,13 @@ namespace mvvmApp.Dal.Abstract.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class migrationEF : IMigrationMetadata
+    public sealed partial class EFmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migrationEF));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EFmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001241029325_migrationEF"; }
+            get { return "202002241241473_EFmigration"; }
         }
         
         string IMigrationMetadata.Source

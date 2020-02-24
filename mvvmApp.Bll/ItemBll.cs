@@ -30,9 +30,20 @@ namespace mvvmApp.Bll
             repository.Create(Mapper.Convert(elem));
         }
 
-        public void Delete(ItemDTO elem)
+        public void Delete(ItemDTO elemDto)
         {
-            repository.Delete(Mapper.Convert(elem));
+            var item = repository.GetById(elemDto.Id);
+            var elem = Mapper.Convert(elemDto);
+            if (elem == item)
+            {
+                repository.Delete(elem);
+            }
+            else
+            {
+                repository.Delete(item);
+            }
+
+            
         }
 
         public ItemDTO Get(int id)
@@ -46,9 +57,13 @@ namespace mvvmApp.Bll
             return items;
         }
 
-        public void Update(ItemDTO elem)
+        public void Update(ItemDTO elemDto)
         {
-            repository.Update(Mapper.Convert(elem));
+            var item = repository.GetById(elemDto.Id);
+            repository.Delete(item);
+            var elem = Mapper.Convert(elemDto);
+            repository.Update(elem);
+            
         }
     }
 }

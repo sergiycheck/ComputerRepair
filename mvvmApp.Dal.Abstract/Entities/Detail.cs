@@ -12,7 +12,7 @@ namespace mvvmApp.Dal.Abstract.Entities
     public class Detail : BaseEntity
     {
         public int? ItemId { get; set; }
-        public Item Item { get; set; }
+        public virtual Item Item { get; set; }
         public bool Status { get; set; }
         public string Title { get; set; }
         

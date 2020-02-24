@@ -8,10 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using mvvmApp.Dal.Abstract.Entities;
-using AutoMapper;
+
 using mvvmApp.Bll.Intecation.Commands;
 using System.Windows;
 using Models;
+using mvvmApp.Bll;
+using mvvmApp.Bll.Mapper;
 
 namespace mvvmapp
 {
@@ -31,11 +33,9 @@ namespace mvvmapp
                         DetailModel item = ob as DetailModel;
                         if (ob != null)
                         {
-
                             try
                             {
-
-                                
+                                detailBll.Repair(item.Id);
                                 MessageBox.Show("Деталь комп'ютера номер " + item.ItemId + " успішно  відремонтована");
                             }
                             catch (Exception ex)
@@ -52,7 +52,26 @@ namespace mvvmapp
             }
         }
 
-        public ObservableCollection<DetailModel> Components { get; set; }
+        private ObservableCollection<DetailModel> components;
+
+        public ObservableCollection<DetailModel> Components
+        {
+            get
+            {
+                try
+                {
+                    components = Mapper.ConvertList(detailBll.GetAll(compId));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+
+                }
+
+                return components;
+            }
+            set { components = value; }
+        }
         private DetailModel selectedDetail;
         public DetailModel SelectedDetail
         {
@@ -66,20 +85,20 @@ namespace mvvmapp
                 OnPropertyRaised("SelectedDetail");
             }
         }
-       
+
+        private DetailBll detailBll;
+        private Mapper Mapper;
+        private int compId;
         public ComponentViewModel( int compId)
         {
+            detailBll = new DetailBll();
+            Mapper = new Mapper();
+            this.compId = compId;
 
-            List<Detail> details = null;// repo.GetDetails(compId);
-
-            var mapperConf = new MapperConfiguration(
-                config => config.CreateMap<Detail,DetailModel>()
-                    .ForMember(dest=>dest.ItemId,opt=>opt.MapFrom(src=>src.ItemId)));
-            var mapper = mapperConf.CreateMapper();
-            Components = new ObservableCollection<DetailModel>
-                (mapper.Map<List<Detail>, ObservableCollection<DetailModel>>(details));
 
         }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyRaised(string propertyname)
         {

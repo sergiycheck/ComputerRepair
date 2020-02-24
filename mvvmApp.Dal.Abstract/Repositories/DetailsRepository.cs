@@ -13,5 +13,10 @@ namespace mvvmApp.Dal.Abstract.Repositories
         {
 
         }
+        public List<Detail> GetCompDetails(int compId)
+        {
+            var details = DbSet.Where(d => d.ItemId == compId);
+            return new List<Detail>(details);
+        }
     }
 }
