@@ -22,9 +22,9 @@ namespace mvvmApp.Dal.Abstract
         public string Company { get; set; }
 
 
-        public virtual List<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
-        public virtual List<Detail> Details { get; set; }
+        public virtual ICollection<Detail> Details { get; set; }
 
         public override  string ToString()
         {

@@ -22,7 +22,7 @@ namespace mvvmApp.Dal.Abstract.Repositories
         public List<Order> GetOrdersWithComputers()
         {
             
-            var orders = DbSet.Include(o=>o.OrderedComputers).ToList();
+            var orders = Context.Orders.AsNoTracking().Include(o=>o.OrderedComputers).ToList();
             
 
             return new List<Order>(orders);

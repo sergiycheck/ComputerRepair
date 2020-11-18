@@ -13,7 +13,7 @@ namespace mvvmApp.Dal.Abstract
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public DateTime Date { get; set; }
-        public virtual List<Item> OrderedComputers { get; set; }
+        public virtual ICollection<Item> OrderedComputers { get; set; }
         public override string ToString()
         {
             return "Sum = " + Sum + " PhoneNumber = " + PhoneNumber + " Address = " + Address + " Date = " + Date;

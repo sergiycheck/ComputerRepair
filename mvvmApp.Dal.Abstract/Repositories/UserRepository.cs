@@ -20,7 +20,8 @@ namespace mvvmApp.Dal.Abstract.Repositories
             var all = Context.Users;
 
             var VerifiedUser =
-                Context.Users.FirstOrDefault(u => u.PhoneNumber == user.PhoneNumber && u.Password == user.Password);
+                Context.Users.AsNoTracking()
+                .FirstOrDefault(u => u.PhoneNumber == user.PhoneNumber && u.Password == user.Password);
             
             if (VerifiedUser != null)
                 return true;

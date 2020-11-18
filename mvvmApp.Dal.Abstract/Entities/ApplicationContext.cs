@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,24 @@ namespace mvvmApp.Dal.Abstract.Entities
         public DbSet<Detail> Details { get; set; }
         
         public DbSet<User> Users { get; set; }
-        
+        public static string ConnectionString;
 
-        
+        private static object syncRoot = new object();
+        private static ApplicationContext _instance;
+        public static ApplicationContext GetInstance()
+        {
+            Console.WriteLine($"GetInstance {DateTime.Now.TimeOfDay}");
+            if (_instance == null)
+            {
+                lock (syncRoot)
+                {
+                    if (_instance == null)
+                        _instance = new ApplicationContext(ConnectionString);
+                }
+            }
+            return _instance;
+        }
+
 
         public ApplicationContext()
         {
@@ -26,12 +42,13 @@ namespace mvvmApp.Dal.Abstract.Entities
         }
         public ApplicationContext(string connectionString) : base(connectionString)
         {
-            //this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
         static ApplicationContext()
         {
+            ConnectionString = ConfigurationManager.ConnectionStrings["ComputerRepairDbConnection"].ConnectionString;
             //Database.SetInitializer<ApplicationContext>(new ItemDbInitializer());
-            
+
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
