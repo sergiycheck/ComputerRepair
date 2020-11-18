@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WCFServiceLibDto, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WCFServiceLibDto\bin\Debug\WCFServiceLibDto.dll</HintPath>
+      <HintPath>..\WCFServiceLibDto\obj\Debug\WCFServiceLibDto.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

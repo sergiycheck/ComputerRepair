@@ -36,10 +36,10 @@ namespace mvvmapp
                             try
                             {
                                 
-                                OrderBll.Delete(item.Id, item.OrderId);
+                                OrderBll.DeleteItemFromOrder(item.Id, item.OrderId);
 
 
-                                MessageBox.Show("Замовлення номер " + item.OrderId + " успішно виконано. Компютер відремонтований");
+                                MessageBox.Show("Замовлення номер " + item.OrderId + " успішно виконано. Комп`ютер відремонтований");
                             }
                             catch (Exception ex)
                             {

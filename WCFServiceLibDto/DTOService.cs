@@ -5,7 +5,8 @@ using mvvmApp.Dal.Abstract.Repositories;
 using mvvmApp.Dal.Abstract.Entities;
 using mvvmApp.Dal.Abstract;
 using AutoMapper;
-using WCFServiceLibDto.DTOs;
+using DTOs;
+
 using mvvmApp.Bll;
 
 namespace WCFServiceLibDto

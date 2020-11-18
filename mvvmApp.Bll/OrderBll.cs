@@ -20,11 +20,7 @@ namespace mvvmApp.Bll
         OrderRepository<Order> repository;
         public OrderBll() 
         {
-            repository = new OrderRepository<Order>
-                (
-                new ApplicationContext
-                ("mvvmApp.Dal.Abstract.Entities.ApplicationContext")
-                );
+            repository = new OrderRepository<Order>(ApplicationContext.GetInstance());
             Mapper = new Mapper.Mapper();
         }
 
@@ -34,18 +30,16 @@ namespace mvvmApp.Bll
             {
                 List<Item> items = new List<Item>();
                 Order order = Mapper.Convert(orderDTO);
-                order.OrderedComputers = new List<Item>();
-                foreach (var item in orderDTO.OrderedComputers)
-                {
-                    Item itemFromDb = new Item();
-                    itemFromDb = repository.Context.Items.FirstOrDefault(i => i.Id == item.Id);
-                    itemFromDb.Orders = new List<Order>(){order};
-                    items.Add(itemFromDb);
-                }
+                //order.OrderedComputers = new List<Item>();
+                //foreach (var item in orderDTO.OrderedComputers)
+                //{
+                //    var itemFromDb = repository.Context.Items.AsNoTracking().FirstOrDefault(i => i.Id == item.Id);
+                //    itemFromDb.Orders.Add(order);
+                //    items.Add(itemFromDb);
+                //}
 
-                order.OrderedComputers = items;
-                
-                
+                //order.OrderedComputers = items;
+
                 repository.Create(order);
             }
             catch (Exception ex)
@@ -74,7 +68,7 @@ namespace mvvmApp.Bll
             }
             return null;
         }
-        public void Delete(int itemId, int? orderId)
+        public void DeleteItemFromOrder(int itemId, int? orderId)
         {
             var orders = repository.GetOrdersWithComputers();
             foreach (var order in orders)
@@ -85,8 +79,7 @@ namespace mvvmApp.Bll
                     {
                         if (item.Id == itemId)
                         {
-                            var itemORD = order.OrderedComputers.FirstOrDefault(i => i.Id == itemId);
-                            order.OrderedComputers.Remove(itemORD);
+                            order.OrderedComputers.Remove(item);
                             repository.Update(order);
                             break;
                         }

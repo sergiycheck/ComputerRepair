@@ -15,11 +15,7 @@ namespace mvvmApp.Bll
         UserRepository<User> repository;
         public UserBll() 
         {
-            repository = new UserRepository<User>
-            (
-            new ApplicationContext
-            ("mvvmApp.Dal.Abstract.Entities.ApplicationContext")
-            );
+            repository = new UserRepository<User>(ApplicationContext.GetInstance());
             Mapper = new Mapper.Mapper();
         }
         public bool Verify(UserDTO user) 

@@ -17,10 +17,7 @@ namespace mvvmApp.Bll
         private DetailsRepository<Detail> repository;
         public DetailBll()
         {
-            repository = new DetailsRepository<Detail>
-                (
-                new ApplicationContext("mvvmApp.Dal.Abstract.Entities.ApplicationContext")
-                );
+            repository = new DetailsRepository<Detail>(ApplicationContext.GetInstance());
             Mapper = new Mapper.Mapper();
         }
 
